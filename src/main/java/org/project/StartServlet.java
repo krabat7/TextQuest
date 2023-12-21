@@ -7,8 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.List;
-import java.util.Map;
 
 @WebServlet(name = "StartServlet", value = "/start")
 public class StartServlet extends HttpServlet {
@@ -30,14 +28,18 @@ public class StartServlet extends HttpServlet {
             session.setAttribute("area", Area.BADLANDS);
         }
 
-        getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/start.jsp").forward(req, resp);
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         HttpSession session = req.getSession();
+        if (session == null) {
+            resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Session is null");
+            return;
+        }
         String action = req.getParameter("action");
-        int health = Integer.parseInt(req.getParameter("health"));
+        int health = (int) session.getAttribute("health");
         boolean foodFound = (boolean) session.getAttribute("foodFound");
         Area area = (Area) session.getAttribute("area");
 
@@ -53,13 +55,9 @@ public class StartServlet extends HttpServlet {
                     if (area.equals(Area.WATERFALL)){
                         session.setAttribute("portalFound", true);
                     }
-                    if (area.equals(Area.CAVE)){
-                        session.setAttribute("keyFound", true);
+                    if (area.equals(Area.FOREST)){
+                        session.setAttribute("totalFound", true);
                     }
-                    if (area.equals(Area.CAVE)){
-                        session.setAttribute("keyFound", true);
-                    }
-
                 }
                 case "searchFood" -> {
                     if (!foodFound && !area.equals(Area.BADLANDS) && !area.equals(Area.PORTAL)){
@@ -91,7 +89,7 @@ public class StartServlet extends HttpServlet {
             }
         }
         session.setAttribute("health", validateHealth(health));
-        resp.sendRedirect("index");
+        resp.sendRedirect("/start");
     }
     private int validateHealth(int health){
         if (health < 0){

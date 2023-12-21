@@ -1,7 +1,7 @@
 package org.project;
 
 public enum Area {
-     BADLANDS,
+    BADLANDS,
     FOREST,
     CAVE,
     DEEPFOREST,
