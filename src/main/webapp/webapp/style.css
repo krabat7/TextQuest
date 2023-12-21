@@ -1,0 +1,77 @@
+/* Основной стиль страницы */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Заголовок */
+h1 {
+    color: #007bff;
+}
+
+/* Кнопки */
+.button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Кнопка результата (например, "Начать сначала") */
+.result-button {
+    background-color: #dc3545;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.result-button:hover {
+    background-color: #bd2130;
+}
+
+/* Стиль здоровья */
+.hero-health {
+    font-weight: bold;
+}
+
+/* Число здоровья жирным */
+.hero-health span {
+    font-weight: bold;
+    color: #28a745; /* Зеленый цвет для здоровья */
+}
+
+/* Текст в story-container - жирный черный */
+#story-container p {
+    font-weight: bold;
+    color: #000; /* Черный цвет для текста */
+}
+
+/* Победа */
+.win-text {
+    color: #28a745; /* Зеленый цвет для текста о победе */
+    font-weight: bold;
+}
+
+/* Поражение */
+.lose-text {
+    color: #dc3545; /* Красный цвет для текста о поражении */
+    font-weight: bold;
+}
+
+/* Стиль контейнера с историей */
+#story-container {
+    margin-top: 20px;
+}
