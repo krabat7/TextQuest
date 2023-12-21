@@ -1,6 +1,7 @@
 <%@ page import="org.project.Area"%>
 <%@ page import="org.project.StartServlet"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page session="true" language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!-- rest of your code -->
 
 <!DOCTYPE html>
 <html>
@@ -10,6 +11,11 @@
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        body {
+            margin-left: 20px;
+        }
+    </style>
 </head>
 <body>
 

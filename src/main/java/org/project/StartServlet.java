@@ -29,7 +29,6 @@ public class StartServlet extends HttpServlet {
             session.setAttribute("health", INITIAL_HEALTH);
             session.setAttribute("area", Area.BADLANDS);
         }
-
         getServletContext().getRequestDispatcher("/start.jsp").forward(req, resp);
     }
 
