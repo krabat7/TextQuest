@@ -15,7 +15,6 @@ public class StartServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // Создание новой сессии
         HttpSession session = req.getSession(true);
 
         if(session.getAttribute("visited") == null){
@@ -35,7 +34,7 @@ public class StartServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         HttpSession session = req.getSession();
         if (session == null) {
             resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Session is null");
