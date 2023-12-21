@@ -1,4 +1,5 @@
 <%@ page import="org.project.Area"%>
+<%@ page import="org.project.StartServlet"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -6,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Text Quest</title>
-    <link rel="stylesheet" type="text/css" href="webapp/style.css">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
@@ -84,7 +85,7 @@
             <button type="button" class="button" onclick="selectOption('forest')">Идти к краю леса</button>
         </c:if>
         <c:if test="${health > 0 && area == WATERFALL}">
-            <button type="button" class="button" onclick="selectOption('forest')">Идти к водопаду</button>
+            <button type="button" class="button" onclick="selectOption('forest')">Идти к краю леса</button>
             <button type="button" class="button" onclick="selectOption('deepForest')">Идти в чащу леса</button>
             <c:if test="${portalFound == true}">
                 <button  type="button" class="button" onclick="selectOption('portal')">Войти в портал</button>
@@ -131,6 +132,8 @@
     <c:if test="${win == true}">
         <p class="win-text">Поздравляем! Это победа. Вы нашли выход и переместились к себе домой в уютную кровать.</p>
     </c:if>
+
+    <p>Игр сыграно: <%= StartServlet.gamesPlayed %></p>
 </div>
 
 <script>

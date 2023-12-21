@@ -11,12 +11,15 @@ import java.io.IOException;
 @WebServlet(name = "StartServlet", value = "/start")
 public class StartServlet extends HttpServlet {
     public static final int INITIAL_HEALTH = 100;
+    public static int gamesPlayed = 0;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // Создание новой сессии
         HttpSession session = req.getSession(true);
 
         if(session.getAttribute("visited") == null){
+            gamesPlayed++;
             session.setAttribute("visited", true);
             session.setAttribute("foodFound", false);
             session.setAttribute("keyFound", false);
