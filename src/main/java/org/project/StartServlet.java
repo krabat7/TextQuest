@@ -57,7 +57,7 @@ public class StartServlet extends HttpServlet {
                         session.setAttribute("portalFound", true);
                     }
                     if (area.equals(Area.FOREST)){
-                        session.setAttribute("totalFound", true);
+                        session.setAttribute("toolFound", true);
                     }
                 }
                 case "searchFood" -> {
@@ -82,7 +82,7 @@ public class StartServlet extends HttpServlet {
                     }else {
                         health -= 60;
                     }
-                    session.setAttribute("area", Area.CAVE);
+                    session.setAttribute("area", Area.DEEPFOREST);
                 }
                 case "waterfall" -> session.setAttribute("area", Area.WATERFALL);
                 case "portal" -> session.setAttribute("area", Area.PORTAL);
