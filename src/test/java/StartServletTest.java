@@ -24,7 +24,7 @@ class StartServletTest {
         when(mockSession.getAttribute("keyFound")).thenReturn(false);
         when(mockSession.getAttribute("toolFound")).thenReturn(false);
         when(mockSession.getAttribute("portalFound")).thenReturn(false);
-        when(mockSession.getAttribute("userName")).thenReturn("TestUserName"); // устанавливаем имя пользователя
+        when(mockSession.getAttribute("userName")).thenReturn("TestUserName");
 
         StartServlet servlet = new StartServlet();
 

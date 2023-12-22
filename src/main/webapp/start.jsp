@@ -138,7 +138,7 @@
         <p class="win-text" style="color: #28a745;">Поздравляем! Это победа. Вы нашли выход и переместились к себе домой в уютную кровать.</p>
     </c:if>
 
-    <br><br><br>
+    <br><br>
     <p style="font-weight: normal; font-style: italic;"><i>Игр сыграно: <%= org.project.StartServlet.gamesPlayed %></i></p>
     <p style="font-weight: normal; font-style: italic;"><i>Имя игрока: <%= session.getAttribute("userName") %></i></p>
 </div>
