@@ -133,13 +133,15 @@
         <p>Вы не знаете, что с ним делать, портал не светится. На стене нарисован какой-то ключ, но вы его никогда не видели. Может он спрятан в другом месте.</p>
     </c:if>
     <c:if test="${health <= 0}">
-        <p class="lose-text">К сожалению, вы умерли. Ваш труп никогда не найдут.</p>
+        <p class="lose-text" style="color: #dc3545;">К сожалению, вы умерли. Ваш труп никогда не найдут.</p>
     </c:if>
     <c:if test="${win == true}">
-        <p class="win-text">Поздравляем! Это победа. Вы нашли выход и переместились к себе домой в уютную кровать.</p>
+        <p class="win-text" style="color: #28a745;">Поздравляем! Это победа. Вы нашли выход и переместились к себе домой в уютную кровать.</p>
     </c:if>
 
-    <p>Игр сыграно: <%= StartServlet.gamesPlayed %></p>
+    <br><br><br>
+    <p style="font-weight: normal; font-style: italic;"><i>Игр сыграно: <%= org.project.StartServlet.gamesPlayed %></i></p>
+    <p style="font-weight: normal; font-style: italic;"><i>Имя игрока: <%= session.getAttribute("userName") %></i></p>
 </div>
 
 <script>

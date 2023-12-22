@@ -17,6 +17,8 @@ public class StartServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession(true);
 
+        String userName = req.getParameter("name");
+        session.setAttribute("userName", userName);
         if(session.getAttribute("visited") == null){
             gamesPlayed++;
             session.setAttribute("visited", true);
