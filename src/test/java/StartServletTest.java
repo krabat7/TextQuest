@@ -24,11 +24,13 @@ class StartServletTest {
         when(mockSession.getAttribute("keyFound")).thenReturn(false);
         when(mockSession.getAttribute("toolFound")).thenReturn(false);
         when(mockSession.getAttribute("portalFound")).thenReturn(false);
+        when(mockSession.getAttribute("userName")).thenReturn("TestUserName"); // устанавливаем имя пользователя
 
         StartServlet servlet = new StartServlet();
 
         servlet.doPost(mockRequest, mockResponse);
+
+        assertEquals("TestUserName", mockSession.getAttribute("userName"));
         assertEquals(100, (int) mockSession.getAttribute("health"));
     }
-
 }

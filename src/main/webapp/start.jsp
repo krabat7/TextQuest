@@ -1,7 +1,6 @@
 <%@ page import="org.project.Area"%>
 <%@ page import="org.project.StartServlet"%>
 <%@ page session="true" language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!-- rest of your code -->
 
 <!DOCTYPE html>
 <html>

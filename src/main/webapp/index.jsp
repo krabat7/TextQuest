@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <style>
         p, h1{
-            text-indent: 20px; /* Измените значение на ваш выбор */
+            text-indent: 20px;
         }
         form {
             margin-left: 20px;

@@ -27,7 +27,7 @@ h1 {
     background-color: #0056b3;
 }
 
-/* Кнопка результата (например, "Начать сначала") */
+/* Кнопка результата */
 .result-button {
     background-color: #dc3545;
     color: #fff;
@@ -58,13 +58,6 @@ h1 {
 #story-container p {
     font-weight: bold;
     color: #000; /* Черный цвет для текста */
-}
-
-
-/* Поражение */
-.lose-text {
-    color: #dc3545; /* Красный цвет для текста о поражении */
-    font-weight: bold;
 }
 
 /* Стиль контейнера с историей */
